@@ -35,7 +35,7 @@ Regenerate it with `python qwen_weather_prompts.py`.
 cd rgb_qwen
 python run_qwen_weather_rgb.py \
   --weather rain --intensity heavy \
-  --input-dir /path/to/clear/image_0 \
+  --input-dir /path/to/clear/images \
   --output-dir /path/to/rain/heavy \
   --comfy-url http://127.0.0.1:8188
 ```
@@ -71,12 +71,5 @@ INPUT_DIR=/path/to/clear OUT_ROOT=/path/to/out \
 | `workflow_qwen_image_edit.json` | ComfyUI API workflow |
 | `run_all_qwen_weather_rgb.sh` | Sequential multi-condition driver |
 
-## Originals (unchanged)
-
-| Piece | Path under `Test_Code/tools/mmdetection3d/project/` |
-|-------|-----------------------------------------------------|
-| Runner | `run_qwen_weather.py` |
-| Prompts | `prompts.json` |
-| Workflow | `02_qwen_Image_edit_subgraphed.json`, `_api.json` |
-| Batch shell | `run_all_qwen_remaining_conditions.sh` |
-| Older hard-coded scripts | `script.py`, `script_nuscenes.py` |
+The runner overrides workflow input/output paths from CLI flags at runtime;
+placeholder paths in the JSON template are not used as-is.

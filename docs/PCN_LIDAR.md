@@ -41,15 +41,6 @@ WeatherGen setup.
 | `pcn_lidar/inject_pcn_weather_lidar.py` | Single-frame PCN CLI + algorithm |
 | `pcn_lidar/batch_weathergen_pcn_lidar.py` | Clear → WeatherGen → PCN batch |
 
-## Originals (unchanged)
-
-| Piece | Path |
-|-------|------|
-| PCN core | `Test_Code/tools/mmdetection3d/tools/project_rain_noise.py` |
-| Batch | `Test_Code/tools/mmdetection3d/tools/batch_clear_to_weather_weathergen_pcn.py` |
-| Legacy KITTI-only wrapper | `Test_Code/tools/mmdetection3d/tools/run_project_rain_noise.py` (stale `--mode` flags; prefer batch script) |
-| WeatherGen checkout | `Test_Code/weathergen` |
-
 ## References
 
 - WeatherGen: https://github.com/wuyang98/weathergen  

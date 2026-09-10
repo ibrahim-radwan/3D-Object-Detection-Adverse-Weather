@@ -1,20 +1,11 @@
 # Project structure
 
-This folder is the **canonical publishable home** for the foundation-model
-adverse-weather 3D detection study:
+This repository is the publishable home for foundation-model adverse-weather
+synthesis helpers used in the 3D detection robustness study.
 
-```text
-/home/wael/Test_Code/foundation-model-generated-adverse-weather-benchmark-for-3d-object-detection-robustness/
-```
+Former names: `weather-benchmark-toolkit`, `fm-adverse-weather-3d-bench`.
 
-Heavy assets and detector day-to-day experiments stay outside this repo.
-A sibling copy may also exist at `/home/wael/fm-adverse-weather-3d-bench/`;
-prefer the `Test_Code` path above as the source of truth for toolkit code.
-
-Former names: `weather-benchmark-toolkit`, `fm-adverse-weather-3d-bench`
-(symlink `Test_Code/weather-benchmark-toolkit` still redirects here).
-
-## Unified publishable packages (this repo)
+## What ships here
 
 | Path | Role |
 |------|------|
@@ -22,48 +13,37 @@ Former names: `weather-benchmark-toolkit`, `fm-adverse-weather-3d-bench`
 | [`../pcn_lidar/`](../pcn_lidar/) | PCN-LiDAR — WeatherGen → constant-\(N\) corruption |
 | [`RGB_QWEN.md`](RGB_QWEN.md) | RGB usage guide |
 | [`PCN_LIDAR.md`](PCN_LIDAR.md) | PCN algorithm + batch guide |
-| [`tables/`](tables/) | Index of TeX / report assets (pointers only) |
+| [`tables/`](tables/) | Index for TeX / report assets (placeholders for now) |
+| [`../configs/`](../configs/) | Placeholder for future detector / eval configs |
 
 ```text
 foundation-model-generated-adverse-weather-benchmark-for-3d-object-detection-robustness/
   rgb_qwen/
   pcn_lidar/
   docs/
-  configs/ scripts/ tools/ src/ paper/  ← placeholders for fuller eval release
+  configs/
+  README.md
+  LICENSE
+  requirements.txt
 ```
 
-## Local research root (not shipped)
+## What is not shipped
 
-Primary detector implementation and reports:
+- Dataset binaries (KITTI / nuScenes / Waymo / STF, etc.)
+- WeatherGen checkpoints and generated point-cloud dumps
+- ComfyUI / model weights
+- Full MMDetection3D training and evaluation trees
 
-```text
-/home/wael/Test_Code/tools/mmdetection3d/
-```
+Clone [WeatherGen](https://github.com/wuyang98/weathergen) and
+[MMDetection3D](https://github.com/open-mmlab/mmdetection3d) separately when
+you need generation checkpoints or detector evaluation.
 
-Related sibling:
+## Intended future additions
 
-```text
-/home/wael/Test_Code/weathergen/                 # WeatherGen generation stack
-```
+When cutting a fuller public release, this tree may additionally include:
 
-Do **not** copy `weather_gen_all/`, datasets, or generated dumps into this repo.
-
-## Mapping: placeholders → live research paths
-
-| Scaffold | Live location (examples) |
-|----------|--------------------------|
-| `configs/` | `/home/wael/Test_Code/tools/mmdetection3d/configs/` |
-| `tools/` | `/home/wael/Test_Code/tools/mmdetection3d/tools/` (e.g. `evaluate_nuscenes_splits_realism.py`) |
-| `scripts/` | Shell/Python runners under the mmdet3d root (`evaluate_weather_*.py`, `test_*_weather.sh`) |
-| `paper/` / `docs/tables/` | `/home/wael/Test_Code/tools/mmdetection3d/data/kitti/validation/reports/` and `data/reports/` |
-| Datasets | `/home/wael/Test_Code/tools/mmdetection3d/data/` (**do not copy into this repo**) |
-
-## Intended publish slice (future)
-
-When cutting a fuller public release, additionally copy only:
-
-1. Small configs needed to reproduce tables
+1. Small configs under `configs/` needed to reproduce paper tables
 2. Evaluation / validation scripts (no `.bin` / `.pkl` / checkpoints)
-3. TeX tables and short paragraphs under `paper/`
+3. Curated TeX tables under `docs/tables/` (or a dedicated paper assets folder)
 
-Do **not** vendor KITTI / nuScenes / Waymo / STF point clouds or WeatherGen dumps.
+Do **not** vendor large sensor dumps or WeatherGen outputs into this repo.

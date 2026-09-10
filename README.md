@@ -1,19 +1,20 @@
 # Foundation-Model-Generated Adverse Weather Benchmark for 3D Object Detection Robustness
 
-Publishable helpers for the foundation-model (FM) adverse-weather benchmark
-(RGB + LiDAR) used to study **3D object detection robustness**. This tree
-copies the essential scripts from the research workspace under
-`tools/mmdetection3d/` so originals keep working. It does **not** vendor
-WeatherGen, MMDetection3D, ComfyUI, or dataset binaries.
+Publishable helpers for foundation-model (FM) adverse-weather synthesis
+(RGB + LiDAR) used to study **3D object detection robustness**. This repository
+ships the weather-generation toolkits and documentation for the accompanying
+paper. It does **not** vendor WeatherGen, MMDetection3D, ComfyUI, detector
+configs for full eval, or dataset binaries.
 
-> Formerly named `weather-benchmark-toolkit` / `fm-adverse-weather-3d-bench`.
-> A symlink at `Test_Code/weather-benchmark-toolkit` → this folder is kept for convenience.
+> Formerly also referred to as `weather-benchmark-toolkit` /
+> `fm-adverse-weather-3d-bench`.
 
-| Package | Role |
-|---------|------|
+| Path | Role |
+|------|------|
 | [`rgb_qwen/`](rgb_qwen/) | Qwen Image Edit via ComfyUI — RGB fog / rain / snow / night / … |
 | [`pcn_lidar/`](pcn_lidar/) | PCN-LiDAR — project WeatherGen noise onto clear scans (constant \(N\)) |
-| [`docs/`](docs/) | Longer notes for each modality |
+| [`docs/`](docs/) | Longer notes for each modality and repo layout |
+| [`configs/`](configs/) | Placeholder for future detector / eval configs |
 
 ## Paper
 
@@ -129,8 +130,8 @@ severity-controlled replace / jitter / intensity attenuation / dropout.
 ### Prerequisites
 
 1. Clone [WeatherGen](https://github.com/wuyang98/weathergen) and download its checkpoint.
-2. Set `WEATHERGEN_ROOT` or pass `--weathergen-root` (batch script also probes
-   sibling `../weathergen` under `Test_Code/` when present).
+2. Set `WEATHERGEN_ROOT` or pass `--weathergen-root` (the batch script also probes
+   a sibling `../weathergen` directory when present).
 
 Default checkpoint: `$WEATHERGEN_ROOT/checkpoint/diffusion_0000100000.pth`.
 
@@ -172,7 +173,7 @@ Package notes: [pcn_lidar/README.md](pcn_lidar/README.md), [docs/PCN_LIDAR.md](d
 
 ---
 
-## Layout
+## Repository layout
 
 ```
 foundation-model-generated-adverse-weather-benchmark-for-3d-object-detection-robustness/
@@ -197,26 +198,20 @@ foundation-model-generated-adverse-weather-benchmark-for-3d-object-detection-rob
     RGB_QWEN.md
     PCN_LIDAR.md
     STRUCTURE.md
-    tables/                          # TeX / report index (pointers)
-  configs/ scripts/ tools/ src/ paper/  # placeholders for fuller eval release
+    tables/                          # index for future TeX / report assets
+  configs/                           # placeholder for future eval configs
 ```
 
----
+Do not commit large point clouds, RGB dumps, or orchestration caches
+(see `.gitignore`).
 
-## Upstream originals (still authoritative for full experiments)
+## External dependencies
 
-| Component | Original path |
-|-----------|---------------|
-| Qwen runner | `Test_Code/tools/mmdetection3d/project/run_qwen_weather.py` |
-| Prompts JSON | `Test_Code/tools/mmdetection3d/project/prompts.json` |
-| Batch shell | `Test_Code/tools/mmdetection3d/project/run_all_qwen_remaining_conditions.sh` |
-| Comfy workflow | `Test_Code/tools/mmdetection3d/project/02_qwen_Image_edit_subgraphed*.json` |
-| PCN core | `Test_Code/tools/mmdetection3d/tools/project_rain_noise.py` |
-| PCN batch | `Test_Code/tools/mmdetection3d/tools/batch_clear_to_weather_weathergen_pcn.py` |
-| WeatherGen | `Test_Code/weathergen` → https://github.com/wuyang98/weathergen |
-
-Do not commit large point clouds, RGB dumps, or orchestration caches into this
-project (see `.gitignore`).
+| Component | Link / note |
+|-----------|-------------|
+| WeatherGen | https://github.com/wuyang98/weathergen |
+| ComfyUI | https://github.com/comfyanonymous/ComfyUI (Qwen Image Edit nodes) |
+| MMDetection3D (optional, downstream eval) | https://github.com/open-mmlab/mmdetection3d |
 
 ## License
 

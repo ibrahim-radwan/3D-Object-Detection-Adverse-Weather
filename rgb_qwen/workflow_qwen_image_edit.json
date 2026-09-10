@@ -215,7 +215,7 @@
         "180",
         0
       ],
-      "output_path": "/home/wael/Test_Code/tools/mmdetection3d/data/kitti/weather_o",
+      "output_path": "/path/to/output",
       "filename_prefix": [
         "134",
         1
@@ -327,7 +327,7 @@
       "seed": 736375965379075,
       "index": 0,
       "label": "Batch 105",
-      "path": "/home/wael/Test_Code/tools/mmdetection3d/data/kitti/val_images",
+      "path": "/path/to/clear/images",
       "pattern": "*.png",
       "allow_RGBA_output": "false",
       "filename_text_extension": "false"

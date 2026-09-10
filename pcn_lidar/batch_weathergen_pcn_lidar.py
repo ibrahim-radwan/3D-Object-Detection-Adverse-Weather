@@ -59,10 +59,9 @@ def _default_weathergen_root() -> Path:
     env = os.environ.get("WEATHERGEN_ROOT", "").strip()
     if env:
         return Path(env)
-    # Common local layout next to this toolkit / under Test_Code
+    # Prefer WEATHERGEN_ROOT; else a sibling ../weathergen checkout
     candidates = [
         _PKG_DIR.parent.parent / "weathergen",
-        Path("/home/wael/Test_Code/weathergen"),
     ]
     for c in candidates:
         if (c / "generate.py").is_file():

@@ -1,29 +1,20 @@
 # Paper tables & reports (index)
 
-TeX / JSON reports are authored in the local MMDetection3D data tree.
-This folder holds **pointers only** until a curated publish slice is copied in.
+This folder is reserved for curated TeX / report assets from the paper.
+Nothing is shipped here yet beyond this index.
 
-## PCN / WeatherGen premise & fusion
+Typical assets to add in a future release (filenames illustrative):
 
-| Asset | Live path |
-|-------|-----------|
-| PCN premise table | `/home/wael/Test_Code/tools/mmdetection3d/data/kitti/validation/reports/tab_pcn_premise_validation.tex` |
-| PCN premise paragraph | `/home/wael/Test_Code/tools/mmdetection3d/data/kitti/validation/reports/paragraph_pcn_premise_validation.tex` |
-| CCC fusion vs single-modality | `/home/wael/Test_Code/tools/mmdetection3d/data/kitti/validation/reports/tab_ccc_fusion_single_modality.tex` |
+| Category | Example assets |
+|----------|----------------|
+| PCN / WeatherGen premise | `tab_pcn_premise_validation.tex`, premise paragraph |
+| Fusion vs single-modality | CCC comparison tables |
+| RGB label integrity | summary table + short paragraph |
+| Appearance realism | generated→real multi-table |
 
-## RGB label integrity & realism
+Related code in this repo:
 
-| Asset | Live path |
-|-------|-----------|
-| Label integrity summary table | `/home/wael/Test_Code/tools/mmdetection3d/data/reports/rgb_label_integrity_extended/small_summary_table.tex` |
-| Label integrity paragraph | `/home/wael/Test_Code/tools/mmdetection3d/data/reports/rgb_label_integrity_extended/small_summary_paragraph.tex` |
-| Generated→real multi table | `/home/wael/Test_Code/tools/mmdetection3d/data/reports/rgb_generated_to_real_multi/table.tex` |
+- [`../../pcn_lidar/`](../../pcn_lidar/) — PCN-LiDAR synthesis
+- [`../../rgb_qwen/`](../../rgb_qwen/) — Qwen RGB synthesis
 
-## WeatherGen stack notes
-
-| Asset | Live path |
-|-------|-----------|
-| WeatherGen project | `/home/wael/Test_Code/weathergen/` |
-| PCN-LiDAR / RGB-Qwen modules | this repo: `../../pcn_lidar/`, `../../rgb_qwen/` |
-
-Copy selected `.tex` files into `../paper/` when preparing the camera-ready release.
+WeatherGen itself is external: https://github.com/wuyang98/weathergen
