@@ -1,0 +1,10 @@
+# RGB (Qwen / ComfyUI)
+requests>=2.28
+numpy>=1.23
+Pillow>=9.0
+tqdm>=4.64
+
+# PCN-LiDAR
+scipy>=1.9
+# sklearn is only used if scipy.spatial.cKDTree is unavailable
+# scikit-learn>=1.1

@@ -1,0 +1,52 @@
+{
+  "negative_prompt": "do not change any objects, geometry, layout, camera, or framing. do not add, remove, replace, hide, or alter any object. do not stylize, enhance, beautify, or hallucinate details. do not regenerate the scene. do not alter materials, colors, or textures except for realistic weather interaction. do not change lighting style or time of day. avoid any modification beyond weather effects. preserve the original scene exactly.",
+  "weather_prompts": {
+    "rain": {
+      "light": "Apply very light realistic rain.\nAdd light natural rain streaks, wet surface reflections, and light ground mist.\nDo not alter any object shape, color, texture, or position.",
+      "medium": "Apply medium level realistic rain.\nAdd medium level natural rain streaks, wet surface reflections, and light ground mist. Slightly reduce the visibilty using rain and fog. \nDo not alter any object shape, color, texture, or position.",
+      "heavy": "Apply heavy realistic rain with dense fog.\nAdd natural rain streaks, wet surface reflections, and light ground mist.\nReduce distance visibility using rain and fog haze only.\nDo not alter any object shape, color, texture, or position."
+    },
+    "snow": {
+      "light": "Transform the scene to light snowfall. Remove sunlight and warm tones. Use an overcast sky with soft, flat lighting. Add sparse, gently falling snowflakes. Do not change any objects, shapes, colors, textures, or layout.",
+      "medium": "Transform the scene to moderate snowfall. Remove sunlight and warm tones. Use a fully overcast sky with flat, muted lighting. Add a dense layer of falling snow that slightly reduces visibility. Do not change any objects, shapes, colors, textures, or layout.",
+      "heavy": "Transform the scene to heavy snowfall. Remove sunlight and warm tones. Use a dark overcast sky with flat, low-contrast lighting. Add thick, swirling snow that strongly reduces visibility. Do not change any objects, shapes, colors, textures, or layout."
+    },
+    "fog": {
+      "light": "Add a very subtle, uniform atmospheric haze to imply light fog. Ensure all original object colors, shapes, textures, and positions remain perfectly preserved and visibly unchanged. Maintain the exact composition, viewpoint, resolution, and detail. Do not introduce new elements.",
+      "medium": "Add light fogy weather. Maintain the original viewpoint, resolution, and detail level. Do not introduce any new structures or elements.",
+      "heavy": "Add a heavy, uniform atmospheric haze to imply heavy fog. Ensure all original object colors, shapes, textures, and positions remain perfectly preserved and visibly unchanged. Maintain the exact composition, viewpoint, resolution, and detail. Do not introduce new elements."
+    },
+    "rain_fog": {
+      "light": "Apply very light realistic rain mixed with light fog.\nAdd light natural rain streaks, subtle wet surface reflections, and a thin uniform fog layer. Slightly soften distant visibility using rain and fog only.\nDo not alter any object shape, color, texture, or position.",
+      "medium": "Apply medium level realistic rain mixed with fog.\nAdd medium level natural rain streaks, wet surface reflections, light ground mist, and noticeable fog. Reduce mid-range visibility using rain and fog haze only.\nDo not alter any object shape, color, texture, or position.",
+      "heavy": "Apply heavy realistic rain with dense fog.\nAdd natural rain streaks, wet surface reflections, and light ground mist. Reduce distance visibility using rain and fog haze only.\nDo not alter any object shape, color, texture, or position."
+    },
+    "snow_rain": {
+      "light": "Transform the scene to light mixed snow and rain weather.\nReplace prior clear conditions with overcast, cool-toned lighting, light rain streaks, sparse snowflakes, and lightly damp surfaces. Maintain the exact same objects, geometry, colors, textures, viewpoint, and composition as the original.",
+      "medium": "Transform the scene to moderate mixed snow and rain weather.\nReplace prior weather cues with overcast sky, cool diffuse lighting, steady rainfall mixed with visible snowfall, and wet surfaces. Preserve all original shapes, colors, textures, positions, geometry, and composition exactly.",
+      "heavy": "Transform the scene to heavy mixed snow and rain weather.\nReplace prior sun, dry ground, and warm tones with deep overcast lighting, dense rain and snow mixture, and reduced atmospheric visibility. All original objects, colors, shapes, and textures must remain completely untouched and visible."
+    },
+    "snow_fog": {
+      "light": "Transform the scene to light snowy weather with fog.\nReplace clear conditions with cool overcast lighting, gently falling snow, and a thin uniform fog layer that softens distant visibility. Maintain the exact same objects, geometry, colors, textures, viewpoint, and composition.",
+      "medium": "Transform the scene to moderate snowfall with fog.\nReplace prior weather conditions with overcast sky, cool diffuse lighting, steady snowfall, and noticeable fog that reduces mid-range visibility. Preserve all original objects, shapes, colors, textures, and positions exactly.",
+      "heavy": "Transform the scene to heavy snowfall with dense fog.\nReplace prior sun, dry ground, and warm tones with deep overcast lighting, dense swirling snowflakes, and thick fog that obscures depth. All original objects, colors, shapes, and textures must remain completely untouched and visible."
+    },
+    "sandstorm": {
+      "light": "Add a very subtle, uniform haze of fine, semi-transparent airborne yellow dust to the scene. Use atmospheric perspective to imply depth, with a very gentle reduction in clarity for distant objects, similar to a light fog effect. Ensure all original object colors, shapes, textures, and positions remain perfectly preserved and visibly unchanged. Maintain the exact composition, viewpoint, resolution, and detail. Do not introduce new elements.",
+      "medium": "Apply light dust or sandstorm conditions, depicted strictly as a volumetric layer of fine, semi-transparent airborne particles with a warm, sandy tone. Simulate the depth and diffusion of fog, causing mid-ground details to soften slightly and distant objects to become faintly obscured. Maintain the original viewpoint, resolution, and detail level. Do not introduce any new structures or elements.",
+      "heavy": "Add a heavy, uniform haze of dense, fine yellow sand, visualized strictly as semi-transparent airborne particles with pronounced depth attenuation. Use strong atmospheric perspective, like in dense fog, where foreground objects are clearer, mid-ground is softened, and background elements are significantly faded and muted. Ensure all original object colors, shapes, textures, and positions remain perfectly preserved and visibly unchanged. Maintain the exact composition, viewpoint, resolution, and detail. Do not introduce new elements."
+    },
+    "night": {
+      "light": "Transform the scene to night-time while preserving all objects and layout. Remove all previous daytime weather cues such as sunlight, bright sky, and hard shadows. \nReplace them with realistic night illumination: low ambient light, cool tones, car headlights and streetlights as primary light sources, and a dark sky. Do not modify the resolution, texture density, or introduce new scene objects; only update the lighting and atmosphere."
+    },
+    "night_fog": {
+      "light": "Transform the scene to a misty night-time environment while preserving all objects and layout. Remove all previous daytime cues like sunlight, bright sky, and hard shadows. Replace them with a dark night sky, very low cool ambient light, and soft illumination only from existing light sources such as streetlights and car headlights. Add a slight, uniform fog that creates subtle halos around lights and softens depth, without obscuring details. Do not modify resolution, texture density, or introduce any new objects; only update the lighting, sky, and atmosphere."
+    },
+    "night_rain": {
+      "light": "Transform the scene to a rainy night-time environment while preserving all objects and layout. Remove all previous daytime cues like sunlight, bright sky, and hard shadows. Replace them with a dark night sky, very low cool ambient light, and soft illumination only from existing light sources such as streetlights and car headlights. Add light rain throughout the scene, visible as streaks in the air and subtle wet reflections on surfaces. Do not modify resolution, texture density, or introduce any new objects; only update the lighting, sky, and atmosphere."
+    },
+    "night_snow": {
+      "light": "Transform the scene to a snowy night-time environment while preserving all objects and layout. Remove all previous daytime cues like sunlight, bright sky, and hard shadows. Replace them with a dark night sky, very low cool ambient light, and soft illumination only from existing light sources such as streetlights and car headlights. Add light snowfall throughout the scene, with sparse snowflakes drifting gently through the air. Do not modify resolution, texture density, or introduce any new objects; only update the lighting, sky, and atmosphere."
+    }
+  }
+}

@@ -1,0 +1,13 @@
+# Ignore local experiment artifacts if this tree is used as a git root.
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.bin
+*.pcd
+*.png
+*.jpg
+*.jpeg
+*.log
+_weathergen_pcn_cache/
+.DS_Store
